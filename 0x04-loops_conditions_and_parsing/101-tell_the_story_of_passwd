@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Tells a story based on the contents of the `/etc/passwd` file.
+
+file="/etc/passwd"
+p1=""
+p2=""
+p3=""
+while IFS= read -r line
+do
+    p1="$(echo "$line" | cut -d":" -p1)"
+    p2="$(echo "$line" | cut -d":" -p4)"
+    p3="$(echo "$line" | cut -d":" -p6)"
+    p4="$(echo "$line" | cut -d":" -p7)"
+    p5="$(echo "$line" | cut -d":" -p3)"
+    p6="$(echo "$line" | cut -d":" -p2)"
+    p7="$(echo "$line" | cut -d":" -p5)"
+    echo "The user ${p1} is part of the ${p2} gang, lives in ${p3} and rides ${p4}. ${p5}'s place is protected by the passcode ${p6}, more info about the user here: ${p7}"
+done < "$file"
