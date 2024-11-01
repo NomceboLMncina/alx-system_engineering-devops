@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# bash script
 
 file="/tmp/my_process"
 
