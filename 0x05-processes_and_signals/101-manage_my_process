@@ -3,7 +3,7 @@
 
 prompt="$1"
 
-if [ -z "$command" ]; then
+if [ -z "$prompt" ]; then
   echo "Usage: manage_my_process {start|stop|restart}"
   exit
 fi
